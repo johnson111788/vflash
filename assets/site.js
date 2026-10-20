@@ -285,19 +285,6 @@
     latencyTask = link.dataset.latencyLink === 'driving' ? $('#driving-controls [aria-pressed="true"]').dataset.driving : 'molmo';
     drawLatency();
   }));
-  $('#copy-bibtex').addEventListener('click', async () => {
-    const text = $('#bibtex-code').textContent;
-    try {
-      if (!navigator.clipboard) throw new Error('Clipboard unavailable');
-      await navigator.clipboard.writeText(text);
-      $('#copy-status').textContent = 'Copied.';
-    } catch (_) {
-      const selection = getSelection(), range = document.createRange();
-      range.selectNodeContents($('#bibtex-code')); selection.removeAllRanges(); selection.addRange(range);
-      $('#copy-status').textContent = 'BibTeX selected. Press Ctrl+C or ⌘C to copy.';
-    }
-  });
-
   // The method explorer is explicitly a conceptual sequence, not a stopwatch
   // or an online benchmark. One start token anchors B-1 predicted positions.
   const explorer = $('#decoder-explorer'), body = $('.pipeline-body'), grid = $('#token-grid'), scene = $('#pipeline-scene');

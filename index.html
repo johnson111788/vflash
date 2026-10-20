@@ -23,7 +23,7 @@
   <script src="assets/motion-data.js?v=20261019-2" defer></script>
   <script src="assets/pipeline-flow.js?v=20261019-refine1" defer></script>
   <script src="assets/video-preload.js?v=20261019-preload2" defer></script>
-  <script src="assets/site.js?v=20261019-liberolabels2" defer></script>
+  <script src="assets/site.js?v=20261020-no-bibtex1" defer></script>
   <!-- Load NVIDIA's consent scripts on NVIDIA domains, not local previews. -->
   <script defer src="assets/consent.js?v=20261016-1"></script>
 </head>
@@ -34,7 +34,7 @@
     <a class="brand" href="#top"><img src="assets/nvidia-logo.png" alt="NVIDIA" width="3028" height="1067"><span>VFlash</span></a>
     <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="main-nav"><span></span><span></span></button>
     <nav id="main-nav" aria-label="Project navigation">
-      <a href="#method">Method</a><a href="#accuracy">Accuracy</a><a href="#primitives">Visual primitives</a><a href="#control">Robot control</a><a href="#driving">Driving</a><a href="#deployment">Deployment</a><a href="#bibtex">BibTeX</a>
+      <a href="#method">Method</a><a href="#accuracy">Accuracy</a><a href="#primitives">Visual primitives</a><a href="#control">Robot control</a><a href="#driving">Driving</a><a href="#deployment">Deployment</a>
     </nav>
   </div>
 </header>
@@ -182,21 +182,6 @@
         <article><h3>Verification for text and trajectories.</h3><p>On MolmoSpaces, <strong>DFlash commits 5.5 tokens per iteration on sub-task text but only 2.2 within trajectory blocks</strong>. A coordinate one bin off the target’s choice fails token-level verification even with small geometric error. VFlash uses <strong>one drafter pass and one target pass per primitive</strong>; the target pass updates the cache and extracts hidden states for the action head, amortized over the block.</p></article>
         <article><h3>NVIDIA’s inference ecosystem.</h3><p><strong>VFlash uses a customized TensorRT-Edge-LLM C++ runtime, with TensorRT engines for the vision encoder, target VLM, and drafter.</strong> CuTe DSL attention, XQA decoding plugins, and CUDA-optimized action models support deployment across Jetson Thor, DGX Spark, and H100. On Thor, decoding takes 71.9 ms for NAVSIM’s 36-position primitive and 78.3 ms for Waymo’s 84-position primitive, including target feature preparation. All measurements use batch size one.</p></article>
       </div>
-    </div>
-  </section>
-
-  <section class="section tint citation-section" id="bibtex" aria-labelledby="bibtex-title">
-    <div class="wrap"><div class="citation-heading"><h2 id="bibtex-title">BibTeX</h2><div class="citation-actions"><a class="text-link" href="assets/paper/vflash.bib" download>Download .bib ↓</a><button class="button small" id="copy-bibtex" type="button">Copy BibTeX</button></div></div>
-      <pre class="citation-code"><code id="bibtex-code">@misc{chou2026vflash,
-  title   = {{VFlash}: Fast, Accurate Visual Planning via Flash Primitive Decoding},
-  author  = {Chou, Yu-Cheng and Wang, Shihao and Huang, Jin and Huang, Chi-Pin and
-             Yang, Chiao-An and Fan, Xianzhe and Wang, Jing and Li, Zhiqi and Kuang, Yuanguo and
-             Zheng, Ruijie and Bjorck, Johan and Fan, Linxi and Liu, Sifei and Su, Hang and
-             Badki, Abhishek and Zhang, Lei and Yuille, Alan and Kautz, Jan and Yu, Zhiding},
-  year    = {2026},
-  url     = {https://johnson111788.github.io/vflash/}
-}
-</code></pre><span id="copy-status" class="small-note" role="status"></span>
     </div>
   </section>
 
