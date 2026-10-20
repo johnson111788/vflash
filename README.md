@@ -7,3 +7,5 @@ Intended URL: https://johnson111788.github.io/vflash/
 
 After review, publish the root of the main branch with GitHub Pages. No build step is required.
 This export contains no report PDF, internal scripts, deployment configuration or source Git history.
+
+Before publishing media updates, run `python scripts/check_media.py` to reject unresolved Git LFS pointers.
